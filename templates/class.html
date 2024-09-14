@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}Virtual Classroom - Courses{% endblock title %}
+
+{% block content %}
+<h1 class="mb-4">Available Courses</h1>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+        <div class="card h-100">
+            <img src="{{ url_for('static', filename='images/python.jpg') }}" class="card-img-top" alt="Python Course">
+            <div class="card-body">
+                <h5 class="card-title">Python Programming</h5>
+                <p class="card-text">Learn Python from basics to advanced concepts. Perfect for beginners and intermediate programmers.</p>
+                <p><strong>Duration:</strong> 8 weeks</p>
+                <p><strong>Price:</strong> $299</p>
+                <p><strong>Placement Assistance:</strong> Yes</p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary">Enroll Now</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+            <img src="{{ url_for('static', filename='images/java.jpg') }}" class="card-img-top" alt="Java Course">
+            <div class="card-body">
+                <h5 class="card-title">Java Development</h5>
+                <p class="card-text">Master Java programming and build robust applications. Suitable for all skill levels.</p>
+                <p><strong>Duration:</strong> 10 weeks</p>
+                <p><strong>Price:</strong> $349</p>
+                <p><strong>Placement Assistance:</strong> Yes</p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary">Enroll Now</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+            <img src="{{ url_for('static', filename='images/fullstack.jpg') }}" class="card-img-top" alt="Full Stack Course">
+            <div class="card-body">
+                <h5 class="card-title">Full Stack Web Development</h5>
+                <p class="card-text">Become a full stack developer with our comprehensive course covering front-end and back-end technologies.</p>
+                <p><strong>Duration:</strong> 16 weeks</p>
+                <p><strong>Price:</strong> $599</p>
+                <p><strong>Placement Assistance:</strong> Yes</p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary">Enroll Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block styles %}
+{{ super() }}
+<style>
+    .card {
+        transition: transform 0.3s;
+    }
+    .card:hover {
+        transform: scale(1.05);
+    }
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+</style>
+{% endblock styles %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const enrollButtons = document.querySelectorAll('.btn-primary');
+        enrollButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const courseName = this.closest('.card').querySelector('.card-title').textContent;
+                alert(`Thank you for your interest in ${courseName}. Enrollment process will be available soon!`);
+            });
+        });
+    });
+</script>
+{% endblock scripts %}

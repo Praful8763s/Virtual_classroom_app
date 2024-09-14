@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Virtual Classroom{% endblock title %}
+
+{% block content %}
+<h1 class="mb-4">Welcome to Virtual Classroom</h1>
+
+<div class="row">
+    <div class="col-md-8">
+        <img src="{{ url_for('static', filename='images/virtual-classroom-banner.jpg') }}" alt="Virtual Classroom Banner" class="img-fluid mb-4">
+        
+        <h2>Empowering Education Through Technology</h2>
+        <p>Welcome to our state-of-the-art Virtual Classroom platform, where learning knows no boundaries. We've created an immersive online environment that brings together students and educators from around the globe, fostering collaboration, creativity, and academic excellence.</p>
+        
+        <h3>Key Features:</h3>
+        <ul>
+            <li>Interactive live sessions with real-time collaboration tools</li>
+            <li>Comprehensive course management system</li>
+            <li>Adaptive learning paths tailored to individual needs</li>
+            <li>Integrated assignment submission and grading</li>
+            <li>Rich multimedia content support</li>
+        </ul>
+
+        <h3>Latest Courses</h3>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/course-python.jpg') }}" class="card-img-top" alt="Python Programming">
+                    <div class="card-body">
+                        <h5 class="card-title">Introduction to Python</h5>
+                        <p class="card-text">Learn the basics of Python programming in this comprehensive course.</p>
+                        <a href="#" class="btn btn-primary">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/course-data-science.jpg') }}" class="card-img-top" alt="Data Science">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Science Fundamentals</h5>
+                        <p class="card-text">Dive into the world of data analysis and machine learning.</p>
+                        <a href="#" class="btn btn-primary">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/course-web-dev.jpg') }}" class="card-img-top" alt="Web Development">
+                    <div class="card-body">
+                        <h5 class="card-title">Full-Stack Web Development</h5>
+                        <p class="card-text">Master both front-end and back-end technologies in web development.</p>
+                        <a href="#" class="btn btn-primary">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <div class="card-header">
+                Upcoming Events
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">AI in Education Webinar - June 15</li>
+                <li class="list-group-item">Student Project Showcase - June 20</li>
+                <li class="list-group-item">Virtual Career Fair - June 25</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                Student Testimonials
+            </div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>"The Virtual Classroom platform has transformed my learning experience. The interactive sessions and collaborative tools have made online education truly engaging."</p>
+                    <footer class="blockquote-footer">Sarah J., Computer Science Student</footer>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="row mt-4">
+    <div class="col-md-12">
+        <h3>Why Choose Virtual Classroom?</h3>
+        <p>Our platform is designed to provide a comprehensive and engaging learning experience that goes beyond traditional online education. We understand the challenges of remote learning and have crafted solutions that bridge the gap between physical and virtual classrooms.</p>
+        <p>With cutting-edge technology and a user-friendly interface, we ensure that both students and educators can focus on what matters most - the joy of learning and teaching. Join our growing community of lifelong learners and take the next step in your educational journey today!</p>
+    </div>
+</div>
+{% endblock content %}
+
+{% block extra_css %}
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
+    .card {
+        transition: transform 0.3s;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+    }
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+</style>
+{% endblock extra_css %}
+
+{% block extra_js %}
+<script>
+    $(document).ready(function() {
+        // Add smooth scrolling to all links
+        $("a").on('click', function(event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function(){
+                    window.location.hash = hash;
+                });
+            }
+        });
+
+        // Initialize tooltips
+        $('[data-toggle="tooltip"]').tooltip();
+
+        // Initialize popovers
+        $('[data-toggle="popover"]').popover();
+    });
+</script>
+{% endblock extra_js %}

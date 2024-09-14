@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}Lecture{% endblock title %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <h1 class="mb-4">Today's Lecture</h1>
+        <div class="card mb-4">
+            <img src="https://via.placeholder.com/800x400" class="card-img-top" alt="Lecture Image">
+            <div class="card-body">
+                <h5 class="card-title">Advanced Machine Learning Techniques</h5>
+                <p class="card-text">Join us for an insightful lecture on cutting-edge machine learning algorithms and their real-world applications.</p>
+                <a href="#" class="btn btn-primary">Join Lecture</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h2 class="mb-4">Top Lecturers</h2>
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="https://via.placeholder.com/100x100" class="img-fluid rounded-start" alt="Professor Photo">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Dr. Rajesh Kumar</h5>
+                        <p class="card-text">IIT Delhi Professor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="https://via.placeholder.com/100x100" class="img-fluid rounded-start" alt="Developer Photo">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Priya Sharma</h5>
+                        <p class="card-text">Senior Developer at Google</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block styles %}
+{{ super() }}
+<style>
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+    }
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+</style>
+{% endblock styles %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const joinButton = document.querySelector('.btn-primary');
+        joinButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            alert('Joining the lecture. Please wait...');
+            // Add your logic here to join the lecture
+        });
+    });
+</script>
+{% endblock scripts %}
