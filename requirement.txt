@@ -1,0 +1,5 @@
+pip install flask
+pip install flask_sqlalchemy
+pip install flask_login
+pip install flasksecurity
+pip install flask-admin
